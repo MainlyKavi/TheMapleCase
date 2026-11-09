@@ -6,23 +6,24 @@ import { Txt } from '@/components/Txt';
 import { publicAccount, site } from '@/content/site';
 import { timeline } from '@/content/timeline';
 import { formatDate } from '@/lib/format';
-import { categories, evidenceHref, getEvidence, publicEvidence, relatedEvidence } from '@/lib/registry';
+import { categories, evidenceHref, getEvidence, getPerson, publicEvidence, relatedEvidence } from '@/lib/registry';
 import { sceneProps, type CaseFile } from '@/stage/types';
 
 const photo = getEvidence('MC-E-004');
 const letter = getEvidence('MC-E-003');
+const cristinaFacts = new Map(getPerson('cristina-maple')?.facts ?? []);
 
 const maple: CaseFile = {
   identity: { title: site.name, subtitle: site.tagline, status: site.status, reward: site.reward },
   kicker: `Missing person · Case ${site.caseReference}`,
   heading: site.subject,
-  subheading: `Reported missing in ${site.missingSince}`,
+  subheading: `Missing since ${formatDate(site.missingSinceDate)}`,
   photo: { evidenceId: 'MC-E-004', src: photo?.file?.src, alt: 'Cristina Maple', caption: photo?.caption },
   facts: [
     ['Status', site.status],
-    ['Reported missing', `${site.missingSince} [TBD: exact date]`],
-    ['Last seen', '[TBD]'],
-    ['Age when reported missing', '[TBD]'],
+    ['Missing since', formatDate(site.missingSinceDate)],
+    ['Last seen', cristinaFacts.get('Last seen') ?? '[TBD]'],
+    ['Age when reported missing', cristinaFacts.get('Age when reported missing') ?? '[TBD]'],
     ['Reward', `Up to ${site.reward}`],
   ],
   summary: publicAccount,
@@ -92,13 +93,15 @@ function MapleArchive({ status }: { status: string }) {
             <dd>{site.caseReference}</dd>
             <dt>Opened</dt>
             <dd>{site.missingSince}</dd>
+            <dt>Location</dt>
+            <dd>{site.location}</dd>
             <dt>Status</dt>
             <dd>{status}</dd>
             <dt>Archive items</dt>
             <dd>{publicEvidence.length}</dd>
             <dt>Last updated</dt>
             <dd>
-              <Txt>{site.lastUpdated}</Txt>
+              <Txt>{formatDate(site.lastUpdated)}</Txt>
             </dd>
           </dl>
         </Panel>
@@ -141,14 +144,8 @@ export default function HomePage() {
       {homeVariants(maple).map((v, i) => (
         <div key={i} {...sceneProps(v.scenes)}>
           <CaseOverview file={v.value} />
-          {v.value.showArchive ? (
-            <MapleArchive status={v.value.identity.status} />
-          ) : (
-            <section className="panel mt-10">
-              <h2 className="panel-head">Evidence archive</h2>
-              <p className="px-6 py-14 text-center text-[13.5px] text-ink-muted">No items have been added to this archive.</p>
-            </section>
-          )}
+          {/* A case without an archive shows its overview only (approved minimum). */}
+          {v.value.showArchive && <MapleArchive status={v.value.identity.status} />}
         </div>
       ))}
     </div>

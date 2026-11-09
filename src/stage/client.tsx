@@ -2,12 +2,18 @@
 
 import { useEffect, useState } from 'react';
 import { Reviewing } from '@/components/Reviewing';
+import type { DirectorApi } from './desktop-types';
 import type { MediaSource, Submission, SubmitResponseProps } from './types';
 
 // PUBLIC stage (client side). Replaced by private/stage/client.tsx in the film build.
 
 export function StageRuntime() {
   return null;
+}
+
+/** No production director in public builds. */
+export function useDesktopDirector(api: DirectorApi): void {
+  void api;
 }
 
 export function useStagedSubmission(): Submission | null {

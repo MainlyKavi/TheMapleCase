@@ -1,7 +1,8 @@
 # The Maple Case: archive website
 
-A fictional 2012–2013 missing-person archive for the short film *THE MAPLE CASE*, built with
-Next.js 16, React 19, TypeScript and Tailwind CSS 4.
+A simulated Mac OS X Tiger desktop for the short film *THE MAPLE CASE*. Its Safari opens the
+fictional missing-person archive Adrian Maple launched in October 2011 (last updated September 16,
+2012). Built with Next.js 16, React 19, TypeScript and Tailwind CSS 4.
 
 > **Keep this repository private.** `docs/`, `private/` and `scripts/` contain story spoilers.
 > Only the static `out/` folder is ever published.
@@ -20,12 +21,17 @@ Next.js 16, React 19, TypeScript and Tailwind CSS 4.
 ## Where things live
 
 ```
+src/desktop/      the simulated OS: shell, menu bar, Dock, window manager, filesystem, Aqua styles
+src/applications/ Finder, Safari, Mail, TextEdit, Preview, QuickTime Player, Address Book, Terminal,
+                  Stickies, System Preferences
+src/investigation/ story event engine and release stages (no story events in public)
 src/content/      the story data: evidence, people, timeline, press, site facts (no spoilers)
 src/components/   period UI components
-src/app/(archive) public pages
+src/app/page.tsx  the desktop (root)
+src/app/(archive) public archive pages (home is /home/), shown inside the desktop Safari
 src/stage/        public stage stubs (always UNSOLVED)
 private/          film-only: stage engine, scene script, production notes, private media
-docs/             PLAN.md (canon, questions, design), CLUE-PLAN.md, PRODUCTION.md
+docs/             CANON.md (canon reconciliation), ARCHITECTURE.md, PLAN.md, CLUE-PLAN.md, PRODUCTION.md
 scripts/          content audit, public-build leak check, film launcher
 tests/            archive search/date tests
 ```

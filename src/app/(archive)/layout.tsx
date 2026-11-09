@@ -1,4 +1,5 @@
-import type { ReactNode } from 'react';
+import { Suspense, type ReactNode } from 'react';
+import { FrameBridge } from '@/components/FrameBridge';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
 
@@ -11,6 +12,9 @@ export default function ArchiveLayout({ children }: { children: ReactNode }) {
       <SiteHeader />
       <main id="content">{children}</main>
       <SiteFooter />
+      <Suspense>
+        <FrameBridge />
+      </Suspense>
     </>
   );
 }

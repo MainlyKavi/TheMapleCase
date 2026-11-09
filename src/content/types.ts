@@ -14,8 +14,8 @@ export type EvidenceCategory =
 
 export type MediaType = 'document' | 'image' | 'video' | 'audio';
 
-/** exact = full date known; approximate = shown as "c."; year = year only; unknown = TBD. */
-export type DateConfidence = 'exact' | 'approximate' | 'year' | 'unknown';
+/** exact = full date; month = month and year only; approximate = shown as "c."; year = year only; unknown = TBD. */
+export type DateConfidence = 'exact' | 'month' | 'approximate' | 'year' | 'unknown';
 
 export type Verification = 'Verified' | 'Provided by family' | 'Unverified' | 'Pending review';
 

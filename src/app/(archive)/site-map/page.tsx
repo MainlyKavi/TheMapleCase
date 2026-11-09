@@ -8,7 +8,7 @@ import { evidenceHref, publicEvidence } from '@/lib/registry';
 export const metadata: Metadata = { title: 'Site Map' };
 
 const PAGES = [
-  ['/', 'Home: case overview'],
+  ['/home/', 'Home: case overview'],
   ['/timeline/', 'Case timeline'],
   ['/people/', 'People'],
   ['/evidence/', 'Evidence archive'],

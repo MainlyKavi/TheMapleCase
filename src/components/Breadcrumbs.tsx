@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 /** trail: [label, href?] pairs after Home. The last item is the current page. */
 export function Breadcrumbs({ trail }: { trail: [string, string?][] }) {
-  const items: [string, string?][] = [['Home', '/'], ...trail];
+  const items: [string, string?][] = [['Home', '/home/'], ...trail];
   return (
     <nav aria-label="Breadcrumb" className="crumbs">
       <ol className="wrap flex flex-wrap py-2.5">

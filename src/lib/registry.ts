@@ -22,6 +22,7 @@ export const categories = [...new Set(publicEvidence.map((e) => e.category))];
 
 export const DATE_ACCURACY = {
   exact: 'Exact',
+  month: 'Month only',
   approximate: 'Approximate',
   year: 'Year only',
   unknown: 'Not recorded',

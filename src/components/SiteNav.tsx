@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { Icon } from './Icon';
 
 const NAV = [
-  ['/', 'Home'],
+  ['/home/', 'Home'],
   ['/timeline/', 'Case Timeline'],
   ['/people/', 'People'],
   ['/evidence/', 'Evidence Archive'],
@@ -23,7 +23,7 @@ export function SiteNav() {
   const [open, setOpen] = useState(false);
   const isActive = (href: string) => {
     const h = trim(href);
-    return h === '/' ? path === '/' : path === h || path.startsWith(`${h}/`);
+    return path === h || path.startsWith(`${h}/`);
   };
 
   return (

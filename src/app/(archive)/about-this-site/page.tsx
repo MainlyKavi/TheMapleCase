@@ -30,7 +30,7 @@ export default function AboutThisSitePage() {
           </p>
         </div>
         <p className="mt-8 text-[13px]">
-          <Link href="/">Return to the case overview</Link>
+          <Link href="/home/">Return to the case overview</Link>
         </p>
       </div>
     </>

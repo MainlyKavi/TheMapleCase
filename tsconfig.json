@@ -35,6 +35,9 @@
       ],
       "@stage/client": [
         "./src/stage/client.tsx"
+      ],
+      "@stage/desktop": [
+        "./src/stage/desktop.ts"
       ]
     }
   },

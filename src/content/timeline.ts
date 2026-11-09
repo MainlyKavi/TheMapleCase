@@ -1,16 +1,16 @@
 import type { TimelineEvent } from './types';
 
 // The archive's own chronology, as Adrian kept it. It ends at the last update: nothing
-// after Adrian's disappearance was ever added. Only the year 2011 is confirmed.
+// after Adrian's disappearance was ever added. Confirmed dates: see docs/CANON.md.
 
 export const timeline: TimelineEvent[] = [
   {
     id: 'T-01',
-    date: '2011',
-    dateConfidence: 'year',
-    title: 'Cristina Maple is reported missing',
+    date: '2011-02-24',
+    dateConfidence: 'exact',
+    title: 'Cristina Maple goes missing',
     description:
-      'Adrian Maple reports that his daughter, Cristina, has disappeared. [TBD: exact date, place and circumstances]',
+      'Adrian Maple wakes one morning to discover that his daughter, Cristina, is missing. There is no evidence that she left the house. [TBD: place she was last seen]',
     relatedEvidenceIds: ['MC-E-001', 'MC-E-004'],
     relatedPressIds: ['P-01'],
     canonStatus: 'confirmed',
@@ -49,8 +49,8 @@ export const timeline: TimelineEvent[] = [
   },
   {
     id: 'T-05',
-    date: '[TBD: archive launch date (undecided)]',
-    dateConfidence: 'unknown',
+    date: '2011-10',
+    dateConfidence: 'month',
     title: 'The Maple Case archive is launched',
     description:
       'Adrian Maple establishes this website to keep the records of the case together and in public view.',
@@ -60,8 +60,8 @@ export const timeline: TimelineEvent[] = [
   },
   {
     id: 'T-06',
-    date: '[TBD: final update date]',
-    dateConfidence: 'unknown',
+    date: '2012-09-16',
+    dateConfidence: 'exact',
     title: 'Archive update: the search to date',
     description: 'A summary of the search is posted to the archive.',
     relatedEvidenceIds: ['MC-E-012'],

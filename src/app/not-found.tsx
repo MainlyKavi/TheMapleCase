@@ -13,7 +13,7 @@ export default function NotFound() {
           The page you requested could not be found. It may have been moved or removed from the archive.
         </p>
         <p className="mt-6 flex flex-wrap gap-2.5">
-          <Link className="btn btn-primary" href="/">
+          <Link className="btn btn-primary" href="/home/">
             Case overview
           </Link>
           <Link className="btn" href="/evidence/">

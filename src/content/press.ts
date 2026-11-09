@@ -55,8 +55,8 @@ export const press: PressItem[] = [
   },
   {
     id: 'P-05',
-    date: '[TBD: archive launch date]',
-    dateConfidence: 'unknown',
+    date: '2011-10',
+    dateConfidence: 'month',
     outlet: '[TBD: outlet]',
     headline: 'Father of Cristina Maple launches online case archive',
     category: 'Archive launch',

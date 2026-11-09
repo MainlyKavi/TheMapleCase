@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { caseVariants } from '@stage';
 import { site } from '@/content/site';
+import { formatDate } from '@/lib/format';
 import { sceneProps } from '@/stage/types';
 import { SiteNav } from './SiteNav';
 import { Txt } from './Txt';
@@ -14,7 +15,7 @@ export function SiteHeader() {
           <span>
             Case reference {site.caseReference}
             <span className="mx-2 opacity-40">|</span>
-            Last updated: <Txt>{site.lastUpdated}</Txt>
+            Last updated: <Txt>{formatDate(site.lastUpdated)}</Txt>
           </span>
           <span className="hidden sm:inline">
             <Link href="/site-map/">Site map</Link>
@@ -27,7 +28,7 @@ export function SiteHeader() {
         <div key={i} {...sceneProps(v.scenes)}>
           <div className="wrap flex flex-col gap-5 pb-6 pt-8 md:flex-row md:items-end md:justify-between">
             <div>
-              <Link href="/" className="wordmark">
+              <Link href="/home/" className="wordmark">
                 {v.value.title}
               </Link>
               <p className="tagline mt-2.5">

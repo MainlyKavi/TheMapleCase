@@ -7,8 +7,12 @@ import type { NextConfig } from 'next';
 const film = process.env.MAPLE_BUILD === 'film';
 
 const stage = film
-  ? { '@stage': './private/stage/index.tsx', '@stage/client': './private/stage/client.tsx' }
-  : { '@stage': './src/stage/index.tsx', '@stage/client': './src/stage/client.tsx' };
+  ? {
+      '@stage': './private/stage/index.tsx',
+      '@stage/client': './private/stage/client.tsx',
+      '@stage/desktop': './private/stage/desktop.tsx',
+    }
+  : { '@stage': './src/stage/index.tsx', '@stage/client': './src/stage/client.tsx', '@stage/desktop': './src/stage/desktop.ts' };
 
 const nextConfig: NextConfig = {
   pageExtensions: film ? ['film.tsx', 'film.ts', 'tsx', 'ts'] : ['tsx', 'ts'],

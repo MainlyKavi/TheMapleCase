@@ -7,23 +7,25 @@ export const people: Person[] = [
   {
     slug: 'cristina-maple',
     name: 'Cristina Maple',
-    role: 'Missing since 2011',
+    role: 'Missing since February 24, 2011',
     photoEvidenceId: 'MC-E-004',
     facts: [
       ['Status', 'Missing'],
-      ['Reported missing', '2011 [TBD: exact date]'],
+      ['Missing since', 'February 24, 2011'],
       ['Last seen', '[TBD]'],
-      ['Age when reported missing', '[TBD]'],
+      // Resolved 2026-11-09: born 1996, so 14 on February 24, 2011 (docs/CANON.md).
+      ['Age when reported missing', '14'],
+      ['Date of birth', 'May 15, 1996'],
       ['Height', '[TBD]'],
-      ['Hair', '[TBD]'],
-      ['Eyes', '[TBD]'],
+      ['Hair', 'Dark brown, nearly black; long wolf cut'],
+      ['Eyes', 'Brown'],
     ],
     relationships: [
       { label: 'Father', name: 'Adrian Maple', href: '/people/adrian-maple/' },
-      { label: 'Mother', name: '[TBD: name]' },
+      { label: 'Mother', name: '[TBD: how the archive presents Cristina’s mother]' },
     ],
     biography: [
-      'Cristina Maple was reported missing by her father, Adrian Maple, in 2011.',
+      'Cristina Maple has been missing since February 24, 2011. Her father, Adrian Maple, woke one morning to find that she was gone, with no evidence that she had left the house.',
       'The details of her life presented in this archive are as provided by the family. [TBD: approved biography]',
     ],
     relatedEvidenceIds: ['MC-E-004', 'MC-E-006', 'MC-E-001', 'MC-E-007'],
@@ -36,12 +38,12 @@ export const people: Person[] = [
     photoEvidenceId: 'MC-E-005',
     facts: [
       ['Occupation', 'Finance executive'],
-      ['Company', '[TBD]'],
+      ['Company', 'Seraphim Financial Group'],
       ['Relationship to case', 'Father; reported Cristina missing'],
     ],
     relationships: [
       { label: 'Daughter', name: 'Cristina Maple', href: '/people/cristina-maple/' },
-      { label: 'Wife', name: '[TBD: name]' },
+      { label: 'Wife', name: 'Catherine Maple' },
     ],
     biography: [
       'Adrian Maple is a finance executive and the father of Cristina Maple.',
