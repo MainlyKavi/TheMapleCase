@@ -1,0 +1,15 @@
+node_modules/
+.next/
+.next-film/
+out/
+*.tsbuildinfo
+next-env.d.ts
+# Private film media (large, unreleased). Keep out of any public repository.
+private/media/*
+!private/media/README.md
+
+# Story spoilers: keep out of the public repository
+docs/
+private/
+scripts/
+.claude/
